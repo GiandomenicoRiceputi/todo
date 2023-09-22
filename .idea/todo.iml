@@ -8,5 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="normalize.css" level="application" />
+    <orderEntry type="library" name="modern-normalize" level="application" />
+    <orderEntry type="library" name="4b0736108d56197fce0ec9068145b421" level="application" />
   </component>
 </module>

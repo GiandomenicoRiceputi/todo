@@ -1,10 +1,11 @@
 import ListHeader from "./components/ListHeader.tsx";
+import Layout from "./layout/Layout.tsx";
 
 function App() {
   return (
-    <div>
+    <Layout>
       <ListHeader listName={"🏖️ Holiday tick list"} />
-    </div>
+    </Layout>
   );
 }
 
