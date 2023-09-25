@@ -7,7 +7,8 @@ interface ListHeaderProps {
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #fff;
   box-shadow:
@@ -22,7 +23,7 @@ const Container = styled.div`
     margin-bottom: 10px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     flex-direction: column;
   }
 
@@ -34,8 +35,8 @@ const Container = styled.div`
 const Button = styled.button`
   background-color: pink;
   color: #fff;
-  padding: 0.5rem 1rem;
-  margin: 0 0 0.375rem 0.5rem;
+  padding: 0.6rem 1rem;
+  margin: 0 0.5rem;
   border-radius: 0.25rem;
   border: none;
   cursor: pointer;
@@ -49,32 +50,42 @@ const Button = styled.button`
 
   @media (max-width: 600px) {
     font-size: 1.2rem;
+    margin: 0.5rem 0;
   }
 
   @media (max-width: 400px) {
     font-size: 1rem;
   }
-
-  hr {
-    border-top: 1px solid grey;
-  }
 `;
+
+const StyledHr = styled.hr`
+  position: absolute;
+  bottom: 0;
+  border: none;
+  height: 1px;
+  background-color: gray;
+  border-radius: 10px;
+  width: clamp(300px, 96%, 700px);
+`;
+
 const signOut = () => {
   console.log("sign out");
 };
 
 const ListHeader: React.FC<ListHeaderProps> = ({ listName }) => {
   return (
-    <Container>
-      <h1>{listName}</h1>
-      <Button type="button" aria-label="Button Text">
-        ADD NEW
-      </Button>
-      <Button type="button" aria-label="Button Text" onClick={signOut}>
-        SIGN OUT
-      </Button>
-      <hr />
-    </Container>
+    <>
+      <Container>
+        <h1>{listName}</h1>
+        <Button type="button" aria-label="Button Text">
+          ADD NEW
+        </Button>
+        <Button type="button" aria-label="Button Text" onClick={signOut}>
+          SIGN OUT
+        </Button>
+        <StyledHr />
+      </Container>
+    </>
   );
 };
 
