@@ -1,17 +1,16 @@
-import * as React from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const LayoutContainer = styled.div`
-  --bar-height: 50px;
-  height: 100dvh;
-  width: 100dvw;
-  background-color: papayawhip;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f1f1f1;
+  min-height: 100vh;
   font-family: "Trebuchet MS", Arial, sans-serif;
 `;
 
